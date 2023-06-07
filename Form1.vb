@@ -1,8 +1,7 @@
 ﻿Imports System.Data.Odbc
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DataSet1.buku' table. You can move, or remove it, as needed.
-        Me.BukuTableAdapter.Fill(Me.DataSet1.buku)
+        BindData()
         DataGridView1.Columns(0).Width = 25
         DataGridView1.Columns(1).Width = 200
         DataGridView1.Columns(2).Width = 180
@@ -92,6 +91,25 @@ Public Class Form1
             MessageBox.Show("Buku ditemukan")
         Else
             MessageBox.Show("Data tidak ditemukan")
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            Dim connectionString As String = "Driver={PostgreSQL Unicode};Server=127.0.0.1;Port=5432;Database=perpus;Uid=postgres;Pwd=tanfi2514;"
+            Dim queryString As String = "SELECT buku.* FROM buku LEFT JOIN transaksi ON buku.id = transaksi.buku_id 
+WHERE buku.id NOT IN (SELECT buku_id FROM transaksi WHERE tanggal_kembali IS NULL)
+GROUP BY buku.id ORDER BY buku.id"
+
+            Dim connection As New OdbcConnection(connectionString)
+            Dim adapter As New OdbcDataAdapter(queryString, connection)
+
+            Dim data As New DataSet()
+            adapter.Fill(data)
+
+            DataGridView1.DataSource = data.Tables(0)
+        Else
+            BindData()
         End If
     End Sub
 End Class

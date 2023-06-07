@@ -2,8 +2,7 @@
 
 Public Class FormPetugas
     Private Sub FormPetugas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DataSet1.petugas' table. You can move, or remove it, as needed.
-        Me.PetugasTableAdapter.Fill(Me.DataSet1.petugas)
+        BindData()
         DataGridView1.Columns(0).Width = 25
         DataGridView1.Columns(1).Width = 138
         DataGridView1.Columns(2).Width = 140

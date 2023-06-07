@@ -1,8 +1,7 @@
 ﻿Imports System.Data.Odbc
 Public Class FormPeminjaman
     Private Sub FormPeminjaman_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DataSet1.DataTable1' table. You can move, or remove it, as needed.
-        Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
+        BindData()
         DataGridView1.Columns(0).Width = 30
         DataGridView1.Columns(1).Width = 150
         DataGridView1.Columns(2).Width = 150
@@ -17,7 +16,7 @@ Public Class FormPeminjaman
         Dim connectionString As String = "Driver={PostgreSQL Unicode};Server=127.0.0.1;Port=5432;Database=perpus;Uid=postgres;Pwd=tanfi2514;"
         Dim queryString As String = "SELECT transaksi.id AS id, buku.judul AS judul_buku, anggota.nama AS nama_anggota, petugas.nama AS nama_petugas, transaksi.tanggal_pinjam, transaksi.tanggal_kembali
 FROM   transaksi, anggota, petugas, buku
-WHERE transaksi.anggota_id = anggota.id AND transaksi.petugas_id = petugas.id AND transaksi.buku_id = buku.id"
+WHERE transaksi.anggota_id = anggota.id AND transaksi.petugas_id = petugas.id AND transaksi.buku_id = buku.id ORDER BY transaksi.id"
 
         Dim connection As New OdbcConnection(connectionString)
         Dim adapter As New OdbcDataAdapter(queryString, connection)

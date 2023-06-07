@@ -1,4 +1,5 @@
 ﻿Public Class FormUtama
+
     Private Sub btnBuku_Click(sender As Object, e As EventArgs) Handles btnBuku.Click
         Dim form = New Form1
         form.TopLevel = False
@@ -27,6 +28,14 @@
         form.Show()
     End Sub
     Private Sub btnPeminjaman_Click(sender As Object, e As EventArgs) Handles btnPeminjaman.Click
+        Dim form = New FormPeminjaman
+        form.TopLevel = False
+        form.FormBorderStyle = FormBorderStyle.None
+        form.WindowState = FormWindowState.Maximized
+        Panel2.Controls.Add(form)
+        form.Show()
+    End Sub
+    Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim form = New FormPeminjaman
         form.TopLevel = False
         form.FormBorderStyle = FormBorderStyle.None

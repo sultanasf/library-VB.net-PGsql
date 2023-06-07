@@ -41,6 +41,7 @@ Partial Class Form1
         Me.btnCariBuku = New System.Windows.Forms.Button()
         Me.txtPenulisBuku = New System.Windows.Forms.TextBox()
         Me.btnHapusBuku = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BukuBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -193,12 +194,23 @@ Partial Class Form1
         Me.btnHapusBuku.Text = "Hapus Buku"
         Me.btnHapusBuku.UseVisualStyleBackColor = True
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(107, 540)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(144, 24)
+        Me.CheckBox1.TabIndex = 13
+        Me.CheckBox1.Text = "Ada dalam Rak"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1084, 630)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.btnHapusBuku)
         Me.Controls.Add(Me.btnCariBuku)
         Me.Controls.Add(Me.txtTahunTerbitBuku)
@@ -239,4 +251,5 @@ Partial Class Form1
     Friend WithEvents btnCariBuku As Button
     Friend WithEvents txtPenulisBuku As TextBox
     Friend WithEvents btnHapusBuku As Button
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
