@@ -1,7 +1,8 @@
 ﻿Imports System.Data.Odbc
 Public Class FormAnggota
     Private Sub FormAnggota_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        BindData()
+        'TODO: This line of code loads data into the 'DataSet1.DataTable1' table. You can move, or remove it, as needed.
+        Me.AnggotaTableAdapter.Fill(Me.DataSet1.anggota)
         DataGridView1.Columns(0).Width = 25
         DataGridView1.Columns(1).Width = 138
         DataGridView1.Columns(2).Width = 140

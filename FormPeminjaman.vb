@@ -1,7 +1,8 @@
 ﻿Imports System.Data.Odbc
 Public Class FormPeminjaman
     Private Sub FormPeminjaman_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        BindData()
+        'TODO: This line of code loads data into the 'DataSet1.DataTable1' table. You can move, or remove it, as needed.
+        Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
         DataGridView1.Columns(0).Width = 30
         DataGridView1.Columns(1).Width = 150
         DataGridView1.Columns(2).Width = 150
@@ -37,7 +38,6 @@ WHERE transaksi.anggota_id = anggota.id AND transaksi.petugas_id = petugas.id AN
             MessageBox.Show("Buku tidak ditemukan")
         End If
     End Sub
-
     Private Sub btnTambahPeminjaman_Click(sender As Object, e As EventArgs) Handles btnTambahPeminjaman.Click
         Dim idAnggota As String = txtIdAnggota.Text
         Dim idPetugas As String = txtIdPetugas.Text
@@ -62,6 +62,17 @@ WHERE transaksi.anggota_id = anggota.id AND transaksi.petugas_id = petugas.id AN
 
         Try
             connection.Open()
+
+            Dim checkQuery As String = "SELECT COUNT(*) FROM transaksi WHERE buku_id = ? AND tanggal_kembali IS NULL"
+            Dim checkCommand As New OdbcCommand(checkQuery, connection)
+            checkCommand.Parameters.AddWithValue("@buku_id", idBuku)
+            Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+            If count > 0 Then
+                MessageBox.Show("Buku belum dikembalikan. Tidak dapat menambahkan peminjaman baru.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                clearTxtBox()
+                Return
+            End If
+
             Dim sql As String = "INSERT INTO transaksi (anggota_id, petugas_id, buku_id, tanggal_pinjam) VALUES (?, ?, ?, ?)"
             Dim command As New OdbcCommand(sql, connection)
             command.Parameters.AddWithValue("@anggota_id", idAnggota)
@@ -76,7 +87,9 @@ WHERE transaksi.anggota_id = anggota.id AND transaksi.petugas_id = petugas.id AN
         Finally
             connection.Close()
         End Try
-
+        clearTxtBox()
+    End Sub
+    Private Sub clearTxtBox()
         txtIdBuku.Text = ""
         txtIdAnggota.Text = ""
         txtIdPetugas.Text = ""
