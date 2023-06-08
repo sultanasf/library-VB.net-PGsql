@@ -24,6 +24,7 @@ Partial Class FormUtama
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUtama))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnPeminjaman = New System.Windows.Forms.Button()
@@ -38,7 +39,8 @@ Partial Class FormUtama
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.btnPeminjaman)
@@ -50,12 +52,26 @@ Partial Class FormUtama
         Me.Panel1.Size = New System.Drawing.Size(211, 652)
         Me.Panel1.TabIndex = 0
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.WhiteSmoke
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
+        Me.LinkLabel1.Location = New System.Drawing.Point(89, 566)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(89, 29)
+        Me.LinkLabel1.TabIndex = 0
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Keluar"
+        '
         'PictureBox2
         '
+        Me.PictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(23, 567)
+        Me.PictureBox2.Location = New System.Drawing.Point(38, 557)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(167, 49)
+        Me.PictureBox2.Size = New System.Drawing.Size(54, 48)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
@@ -73,7 +89,7 @@ Partial Class FormUtama
         '
         'btnPeminjaman
         '
-        Me.btnPeminjaman.BackColor = System.Drawing.Color.DarkTurquoise
+        Me.btnPeminjaman.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnPeminjaman.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPeminjaman.Location = New System.Drawing.Point(9, 393)
         Me.btnPeminjaman.Name = "btnPeminjaman"
@@ -84,7 +100,7 @@ Partial Class FormUtama
         '
         'btnPetugas
         '
-        Me.btnPetugas.BackColor = System.Drawing.Color.DarkTurquoise
+        Me.btnPetugas.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnPetugas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPetugas.Location = New System.Drawing.Point(9, 320)
         Me.btnPetugas.Name = "btnPetugas"
@@ -95,7 +111,7 @@ Partial Class FormUtama
         '
         'btnAnggota
         '
-        Me.btnAnggota.BackColor = System.Drawing.Color.DarkTurquoise
+        Me.btnAnggota.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnAnggota.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnAnggota.Location = New System.Drawing.Point(9, 247)
         Me.btnAnggota.Name = "btnAnggota"
@@ -106,7 +122,7 @@ Partial Class FormUtama
         '
         'btnBuku
         '
-        Me.btnBuku.BackColor = System.Drawing.Color.DarkTurquoise
+        Me.btnBuku.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnBuku.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBuku.Location = New System.Drawing.Point(9, 174)
         Me.btnBuku.Name = "btnBuku"
@@ -126,13 +142,14 @@ Partial Class FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1314, 654)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormUtama"
         Me.Text = "FormUtama"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -147,4 +164,5 @@ Partial Class FormUtama
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

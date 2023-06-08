@@ -199,7 +199,7 @@ Partial Class FormPetugas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1084, 630)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.btnHapusPetugas)

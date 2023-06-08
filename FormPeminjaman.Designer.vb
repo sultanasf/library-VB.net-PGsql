@@ -26,6 +26,14 @@ Partial Class FormPeminjaman
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.judulPeminjaman = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamapetugasDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaanggotaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JudulbukuDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TanggalpinjamDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TanggalkembaliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New Perpus.DataSet1()
         Me.btnCariBuku = New System.Windows.Forms.Button()
         Me.txtIdPetugas = New System.Windows.Forms.TextBox()
         Me.labelTahunTerbitBuku = New System.Windows.Forms.Label()
@@ -38,18 +46,10 @@ Partial Class FormPeminjaman
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataSet1 = New Perpus.DataSet1()
-        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataTable1TableAdapter = New Perpus.DataSet1TableAdapters.DataTable1TableAdapter()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamapetugasDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamaanggotaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JudulbukuDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TanggalpinjamDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TanggalkembaliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'judulPeminjaman
@@ -74,6 +74,67 @@ Partial Class FormPeminjaman
         Me.DataGridView1.RowTemplate.Height = 28
         Me.DataGridView1.Size = New System.Drawing.Size(885, 304)
         Me.DataGridView1.TabIndex = 7
+        '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "id"
+        Me.IdDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.Width = 150
+        '
+        'NamapetugasDataGridViewTextBoxColumn
+        '
+        Me.NamapetugasDataGridViewTextBoxColumn.DataPropertyName = "nama_petugas"
+        Me.NamapetugasDataGridViewTextBoxColumn.HeaderText = "nama_petugas"
+        Me.NamapetugasDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.NamapetugasDataGridViewTextBoxColumn.Name = "NamapetugasDataGridViewTextBoxColumn"
+        Me.NamapetugasDataGridViewTextBoxColumn.Width = 150
+        '
+        'NamaanggotaDataGridViewTextBoxColumn
+        '
+        Me.NamaanggotaDataGridViewTextBoxColumn.DataPropertyName = "nama_anggota"
+        Me.NamaanggotaDataGridViewTextBoxColumn.HeaderText = "nama_anggota"
+        Me.NamaanggotaDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.NamaanggotaDataGridViewTextBoxColumn.Name = "NamaanggotaDataGridViewTextBoxColumn"
+        Me.NamaanggotaDataGridViewTextBoxColumn.Width = 150
+        '
+        'JudulbukuDataGridViewTextBoxColumn
+        '
+        Me.JudulbukuDataGridViewTextBoxColumn.DataPropertyName = "judul_buku"
+        Me.JudulbukuDataGridViewTextBoxColumn.HeaderText = "judul_buku"
+        Me.JudulbukuDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.JudulbukuDataGridViewTextBoxColumn.Name = "JudulbukuDataGridViewTextBoxColumn"
+        Me.JudulbukuDataGridViewTextBoxColumn.Width = 150
+        '
+        'TanggalpinjamDataGridViewTextBoxColumn
+        '
+        Me.TanggalpinjamDataGridViewTextBoxColumn.DataPropertyName = "tanggal_pinjam"
+        Me.TanggalpinjamDataGridViewTextBoxColumn.HeaderText = "tanggal_pinjam"
+        Me.TanggalpinjamDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.TanggalpinjamDataGridViewTextBoxColumn.Name = "TanggalpinjamDataGridViewTextBoxColumn"
+        Me.TanggalpinjamDataGridViewTextBoxColumn.Width = 150
+        '
+        'TanggalkembaliDataGridViewTextBoxColumn
+        '
+        Me.TanggalkembaliDataGridViewTextBoxColumn.DataPropertyName = "tanggal_kembali"
+        DataGridViewCellStyle1.Format = "d"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.TanggalkembaliDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
+        Me.TanggalkembaliDataGridViewTextBoxColumn.HeaderText = "tanggal_kembali"
+        Me.TanggalkembaliDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.TanggalkembaliDataGridViewTextBoxColumn.Name = "TanggalkembaliDataGridViewTextBoxColumn"
+        Me.TanggalkembaliDataGridViewTextBoxColumn.Width = 150
+        '
+        'DataTable1BindingSource
+        '
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnCariBuku
         '
@@ -180,76 +241,15 @@ Partial Class FormPeminjaman
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "Tgl Pinjam"
         '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataTable1BindingSource
-        '
-        Me.DataTable1BindingSource.DataMember = "DataTable1"
-        Me.DataTable1BindingSource.DataSource = Me.DataSet1
-        '
         'DataTable1TableAdapter
         '
         Me.DataTable1TableAdapter.ClearBeforeFill = True
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "id"
-        Me.IdDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.Width = 150
-        '
-        'NamapetugasDataGridViewTextBoxColumn
-        '
-        Me.NamapetugasDataGridViewTextBoxColumn.DataPropertyName = "nama_petugas"
-        Me.NamapetugasDataGridViewTextBoxColumn.HeaderText = "nama_petugas"
-        Me.NamapetugasDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.NamapetugasDataGridViewTextBoxColumn.Name = "NamapetugasDataGridViewTextBoxColumn"
-        Me.NamapetugasDataGridViewTextBoxColumn.Width = 150
-        '
-        'NamaanggotaDataGridViewTextBoxColumn
-        '
-        Me.NamaanggotaDataGridViewTextBoxColumn.DataPropertyName = "nama_anggota"
-        Me.NamaanggotaDataGridViewTextBoxColumn.HeaderText = "nama_anggota"
-        Me.NamaanggotaDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.NamaanggotaDataGridViewTextBoxColumn.Name = "NamaanggotaDataGridViewTextBoxColumn"
-        Me.NamaanggotaDataGridViewTextBoxColumn.Width = 150
-        '
-        'JudulbukuDataGridViewTextBoxColumn
-        '
-        Me.JudulbukuDataGridViewTextBoxColumn.DataPropertyName = "judul_buku"
-        Me.JudulbukuDataGridViewTextBoxColumn.HeaderText = "judul_buku"
-        Me.JudulbukuDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.JudulbukuDataGridViewTextBoxColumn.Name = "JudulbukuDataGridViewTextBoxColumn"
-        Me.JudulbukuDataGridViewTextBoxColumn.Width = 150
-        '
-        'TanggalpinjamDataGridViewTextBoxColumn
-        '
-        Me.TanggalpinjamDataGridViewTextBoxColumn.DataPropertyName = "tanggal_pinjam"
-        Me.TanggalpinjamDataGridViewTextBoxColumn.HeaderText = "tanggal_pinjam"
-        Me.TanggalpinjamDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.TanggalpinjamDataGridViewTextBoxColumn.Name = "TanggalpinjamDataGridViewTextBoxColumn"
-        Me.TanggalpinjamDataGridViewTextBoxColumn.Width = 150
-        '
-        'TanggalkembaliDataGridViewTextBoxColumn
-        '
-        Me.TanggalkembaliDataGridViewTextBoxColumn.DataPropertyName = "tanggal_kembali"
-        DataGridViewCellStyle1.Format = "d"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.TanggalkembaliDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
-        Me.TanggalkembaliDataGridViewTextBoxColumn.HeaderText = "tanggal_kembali"
-        Me.TanggalkembaliDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.TanggalkembaliDataGridViewTextBoxColumn.Name = "TanggalkembaliDataGridViewTextBoxColumn"
-        Me.TanggalkembaliDataGridViewTextBoxColumn.Width = 150
         '
         'FormPeminjaman
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1084, 630)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label2)
@@ -269,8 +269,8 @@ Partial Class FormPeminjaman
         Me.Name = "FormPeminjaman"
         Me.Text = "FormPeminjaman"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

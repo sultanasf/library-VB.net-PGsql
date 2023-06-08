@@ -199,16 +199,16 @@ Partial Class Form1
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Location = New System.Drawing.Point(107, 540)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(144, 24)
+        Me.CheckBox1.Size = New System.Drawing.Size(96, 24)
         Me.CheckBox1.TabIndex = 13
-        Me.CheckBox1.Text = "Ada dalam Rak"
+        Me.CheckBox1.Text = "Tersedia"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1084, 630)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.btnHapusBuku)
