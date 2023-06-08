@@ -24,16 +24,16 @@ Partial Class FormUtama
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUtama))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnPeminjaman = New System.Windows.Forms.Button()
         Me.btnPetugas = New System.Windows.Forms.Button()
         Me.btnAnggota = New System.Windows.Forms.Button()
         Me.btnBuku = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -45,16 +45,37 @@ Partial Class FormUtama
         Me.Panel1.Controls.Add(Me.btnPetugas)
         Me.Panel1.Controls.Add(Me.btnAnggota)
         Me.Panel1.Controls.Add(Me.btnBuku)
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 630)
+        Me.Panel1.Size = New System.Drawing.Size(211, 652)
         Me.Panel1.TabIndex = 0
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(23, 567)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(167, 49)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 1
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 46)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(200, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
         '
         'btnPeminjaman
         '
         Me.btnPeminjaman.BackColor = System.Drawing.Color.DarkTurquoise
         Me.btnPeminjaman.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPeminjaman.Location = New System.Drawing.Point(3, 378)
+        Me.btnPeminjaman.Location = New System.Drawing.Point(9, 393)
         Me.btnPeminjaman.Name = "btnPeminjaman"
         Me.btnPeminjaman.Size = New System.Drawing.Size(194, 67)
         Me.btnPeminjaman.TabIndex = 7
@@ -65,7 +86,7 @@ Partial Class FormUtama
         '
         Me.btnPetugas.BackColor = System.Drawing.Color.DarkTurquoise
         Me.btnPetugas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPetugas.Location = New System.Drawing.Point(3, 305)
+        Me.btnPetugas.Location = New System.Drawing.Point(9, 320)
         Me.btnPetugas.Name = "btnPetugas"
         Me.btnPetugas.Size = New System.Drawing.Size(194, 67)
         Me.btnPetugas.TabIndex = 6
@@ -76,7 +97,7 @@ Partial Class FormUtama
         '
         Me.btnAnggota.BackColor = System.Drawing.Color.DarkTurquoise
         Me.btnAnggota.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnAnggota.Location = New System.Drawing.Point(3, 232)
+        Me.btnAnggota.Location = New System.Drawing.Point(9, 247)
         Me.btnAnggota.Name = "btnAnggota"
         Me.btnAnggota.Size = New System.Drawing.Size(194, 67)
         Me.btnAnggota.TabIndex = 5
@@ -87,33 +108,12 @@ Partial Class FormUtama
         '
         Me.btnBuku.BackColor = System.Drawing.Color.DarkTurquoise
         Me.btnBuku.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBuku.Location = New System.Drawing.Point(3, 159)
+        Me.btnBuku.Location = New System.Drawing.Point(9, 174)
         Me.btnBuku.Name = "btnBuku"
         Me.btnBuku.Size = New System.Drawing.Size(194, 67)
         Me.btnBuku.TabIndex = 4
         Me.btnBuku.Text = "Buku"
         Me.btnBuku.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 31)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(200, 100)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(17, 552)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(167, 49)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
         '
         'Panel2
         '
@@ -133,8 +133,8 @@ Partial Class FormUtama
         Me.Name = "FormUtama"
         Me.Text = "FormUtama"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
